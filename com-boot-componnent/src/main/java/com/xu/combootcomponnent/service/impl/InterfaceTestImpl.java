@@ -17,6 +17,7 @@ public class InterfaceTestImpl implements InterfaceTest {
     private UserMapper userMapper;
     @Override
     public UserEntity getoneUser(long id) {
-        return userMapper.getOne(1L);
+       // return userMapper.getOne(1L);
+        return null;
     }
 }
