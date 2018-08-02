@@ -5,6 +5,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Component;
 
 /**
+ * mybatis 无接口示例
  * @author xuhongda on 2018/8/2
  * com.xu.combootcomponnent.dao
  * com-boot-ex
