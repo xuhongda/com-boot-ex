@@ -3,6 +3,7 @@ package com.xu.bootweb.mybatis;
 import entity.UserEntity;
 import enums.UserSexEnum;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * com.xu.bootweb.mybatis
  * com-boot-ex
  */
+@Repository
 public interface UserDao {
 
     @Select("SELECT * FROM users")

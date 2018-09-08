@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ import java.util.List;
  * com.xu.bootweb.controller
  * com-boot-ex
  */
-@Controller
+@RestController
 @RequestMapping("hello")
 public class HelloController {
 
@@ -31,13 +32,11 @@ public class HelloController {
     }
 
     @GetMapping("test1")
-    @ResponseBody
     public UserEntity test1(){
         return myRepository.get();
     }
 
     @GetMapping("test2")
-    @ResponseBody
     public List<UserEntity> test2() {
         return userDao.getAll();
     }
