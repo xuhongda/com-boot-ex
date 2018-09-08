@@ -4,10 +4,8 @@ import com.xu.bootweb.MyRepository;
 import com.xu.bootweb.mybatis.UserDao;
 import entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -39,6 +37,11 @@ public class HelloController {
     @GetMapping("test2")
     public List<UserEntity> test2() {
         return userDao.getAll();
+    }
+
+    @GetMapping("test3")
+    public void test3() {
+        throw new RuntimeException();
     }
 
 }
