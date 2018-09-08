@@ -39,21 +39,17 @@
         </developer>
     </developers>
 
-    <profiles>
-
-    </profiles>
-
-
-    <dependencies>
-
-    </dependencies>
-
+    <inceptionYear>2018</inceptionYear>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <mainClass>com.xu.bootweb.WebApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
