@@ -32,7 +32,7 @@ public class RestfulController {
      * </P>
      *
      * @param girl
-     * @return
+     * @return Girl
      */
     @GetMapping("getGirl")
     public Girl getGirl(@Valid Girl girl, BindingResult bindingResult) {
