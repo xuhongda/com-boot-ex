@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>com-xu-repository</artifactId>
+    <artifactId>com-boot-persistence</artifactId>
 
     <dependencies>
         <dependency>
