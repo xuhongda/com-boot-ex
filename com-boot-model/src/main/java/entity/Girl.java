@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import validator.MyConstraint;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Past;
@@ -27,6 +28,7 @@ public class Girl {
     public interface GirlDetailView extends GirlSimpleView {
     }
 
+    @MyConstraint(message = "测试")
     private String age;
 
     @JsonView(GirlSimpleView.class)
