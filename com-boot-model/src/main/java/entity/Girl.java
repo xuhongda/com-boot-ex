@@ -24,12 +24,8 @@ public class Girl {
     public interface GirlSimpleView {
     }
 
-    ;
-
     public interface GirlDetailView extends GirlSimpleView {
     }
-
-    ;
 
     private String age;
 

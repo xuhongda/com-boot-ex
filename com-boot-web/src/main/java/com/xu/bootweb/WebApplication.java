@@ -19,7 +19,6 @@ public class WebApplication {
     }
 
     public static void main(String[] args) {
-        // System.exit(SpringApplication.exit(SpringApplication.run(WebApplication.class,args)));
         SpringApplication.run(WebApplication.class, args);
     }
 }
