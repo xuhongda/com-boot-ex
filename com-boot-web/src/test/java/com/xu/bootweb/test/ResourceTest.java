@@ -31,7 +31,8 @@ public class ResourceTest {
     public void test() throws IOException {
         //spring 文件路径
         ConfigurableApplicationContext ctx = new GenericApplicationContext();
-        Resource resource = ctx.getResource("classpath:txt/test.txt");
+        Resource resource = ctx.getResource("txt/test.txt");
+        // Resource resource = ctx.getResource("classpath:txt/test.txt");
         File file1 = resource.getFile();
         List<String> strings = Files.readLines(file1, Charsets.UTF_8);
         strings.forEach(System.out::println);
