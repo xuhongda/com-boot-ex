@@ -2,7 +2,7 @@ package com.xu.bootweb.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.xu.bootweb.MyRepository;
-import com.xu.bootweb.mybatis.UserDao;
+import com.xu.bootweb.mapper.UserDao;
 import entity.Girl;
 import entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import validator.MyConstraint;
 
 import java.util.List;
 
@@ -45,10 +44,6 @@ public class HelloController {
         return myRepository.get();
     }
 
-    @GetMapping("test2")
-    public List<UserEntity> test2() {
-        return userDao.getAll();
-    }
 
     @GetMapping("test3")
     public void test3() {

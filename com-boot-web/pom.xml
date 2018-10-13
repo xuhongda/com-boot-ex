@@ -18,7 +18,7 @@
     <dependencies>
         <dependency>
             <groupId>com.xu</groupId>
-            <artifactId>com-boot-persistence</artifactId>
+            <artifactId>com-boot-persistence-annotation</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -65,6 +65,17 @@
                 <configuration>
                     <fork>true</fork>
                     <mainClass>com.xu.bootweb.WebApplication</mainClass>
+                </configuration>
+            </plugin>
+            <!--jib-->
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>0.9.11</version>
+                <configuration>
+                    <to>
+                        <image>gcr.io/my-project/image-built-with-jib</image>
+                    </to>
                 </configuration>
             </plugin>
         </plugins>

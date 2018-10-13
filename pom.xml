@@ -40,7 +40,7 @@
         <module>com-boot-util</module>
         <module>com-boot-web</module>
         <module>com-boot-model</module>
-        <module>com-boot-persistence</module>
+        <module>com-boot-persistence-annotation</module>
     </modules>
 
     <developers>

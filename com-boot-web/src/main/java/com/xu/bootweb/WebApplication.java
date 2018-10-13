@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
  * @author xuhongda
  */
 @SpringBootApplication
-@MapperScan("com.xu.bootweb.mybatis")
+@MapperScan("com.xu.bootweb.mapper")
 public class WebApplication {
 
     @Bean
