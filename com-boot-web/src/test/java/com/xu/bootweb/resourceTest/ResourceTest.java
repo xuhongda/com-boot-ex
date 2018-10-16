@@ -1,4 +1,4 @@
-package com.xu.bootweb.test;
+package com.xu.bootweb.resourceTest;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Files;
@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * @author xuhongda on 2018/10/13
- * com.xu.bootweb.test
+ * com.xu.bootweb.resourceTest
  * com-boot-ex
  */
 @RunWith(SpringRunner.class)
@@ -32,7 +32,7 @@ public class ResourceTest {
         //spring 文件路径
         ConfigurableApplicationContext ctx = new GenericApplicationContext();
         Resource resource = ctx.getResource("txt/test.txt");
-        // Resource resource = ctx.getResource("classpath:txt/test.txt");
+        // Resource resource = ctx.getResource("classpath:txt/resourceTest.txt");
         File file1 = resource.getFile();
         List<String> strings = Files.readLines(file1, Charsets.UTF_8);
         strings.forEach(System.out::println);
