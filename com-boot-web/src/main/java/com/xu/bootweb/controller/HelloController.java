@@ -3,6 +3,7 @@ package com.xu.bootweb.controller;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.xu.bootweb.MyRepository;
 import com.xu.bootweb.mapper.UserDao;
+import com.xu.bootweb.properties.MyProperties;
 import entity.Girl;
 import entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,10 @@ public class HelloController {
 
     private final MyRepository myRepository;
 
+    private final MyProperties myProperties;
+
     private final UserDao userDao;
-    @Value("${xu.param}")
+    @Value("${com.xu.Girl.age}")
     private String param;
 
     @GetMapping("hello")
@@ -34,8 +37,9 @@ public class HelloController {
     }
 
     @Autowired
-    public HelloController(MyRepository myRepository, UserDao userDao) {
+    public HelloController(MyRepository myRepository, MyProperties myProperties, UserDao userDao) {
         this.myRepository = myRepository;
+        this.myProperties = myProperties;
         this.userDao = userDao;
     }
 
@@ -65,6 +69,13 @@ public class HelloController {
     @GetMapping("test5")
     public Girl test5(Girl girl) {
         return myRepository.getGirl();
+    }
+
+
+    @GetMapping("test6")
+    public Object test6() {
+        Girl girl = myProperties.getGirl();
+        return girl;
     }
 
 

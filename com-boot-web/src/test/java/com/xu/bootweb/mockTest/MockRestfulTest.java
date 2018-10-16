@@ -43,4 +43,13 @@ public class MockRestfulTest {
                 .andDo(print())
         ;
     }
+
+    @Test
+    public void test() throws Exception {
+        mockMvc
+                .perform(get("/hello/test6"))
+                .andExpect(status().isOk())
+                .andDo(print())
+        ;
+    }
 }
