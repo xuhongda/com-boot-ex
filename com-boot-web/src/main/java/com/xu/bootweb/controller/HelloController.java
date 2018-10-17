@@ -2,6 +2,7 @@ package com.xu.bootweb.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.xu.bootweb.MyRepository;
+import com.xu.bootweb.exception.ZeRoException;
 import com.xu.bootweb.mapper.UserDao;
 import com.xu.bootweb.properties.MyProperties;
 import entity.Girl;
@@ -44,7 +45,7 @@ public class HelloController {
     }
 
     @GetMapping("test1")
-    public UserEntity test1(){
+    public UserEntity test1() {
         return myRepository.get();
     }
 
@@ -71,14 +72,29 @@ public class HelloController {
         return myRepository.getGirl();
     }
 
-
+    /**
+     * 配置文件
+     *
+     * @return
+     */
     @GetMapping("test6")
     public Object test6() {
         Girl girl = myProperties.getGirl();
         return girl;
     }
 
-
+    /**
+     * 自定义异常处理
+     *
+     * @return
+     */
+    @GetMapping("test7")
+    public Object test7() {
+        //
+        //int i = 100 / 0;
+        throw new ZeRoException("ec");
+        // return i;
+    }
 
 
 }
