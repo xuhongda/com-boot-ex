@@ -12,10 +12,10 @@ import java.util.List;
  * com.xu.bootweb.mapper
  * com-boot-ex
  */
-//@Repository
+@Repository
 public interface UserDao {
 
-    /*@Select("SELECT * FROM users")
+    @Select("SELECT * FROM users")
     @Results({
             @Result(property = "userSex", column = "user_sex", javaType = UserSexEnum.class),
             @Result(property = "nickName", column = "nick_name")
@@ -36,7 +36,7 @@ public interface UserDao {
     void update(UserEntity user);
 
     @Delete("DELETE FROM users WHERE id =#{id}")
-    void delete(Long id);*/
+    void delete(Long id);
 
 
 }
