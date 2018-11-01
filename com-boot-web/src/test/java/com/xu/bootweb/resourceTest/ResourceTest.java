@@ -23,6 +23,7 @@ import java.util.List;
 public class ResourceTest {
 
     /**
+     * spring 路径
      * guava 读取文件
      *
      * @throws IOException
