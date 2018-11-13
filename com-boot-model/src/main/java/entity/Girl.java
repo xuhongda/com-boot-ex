@@ -28,6 +28,9 @@ public class Girl {
     public interface GirlDetailView extends GirlSimpleView {
     }
 
+    /**
+     * 自定义校验
+     */
     @MyConstraint(message = "测试")
     private String age;
 

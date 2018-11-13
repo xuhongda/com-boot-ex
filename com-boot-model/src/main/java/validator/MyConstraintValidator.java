@@ -21,8 +21,8 @@ public class MyConstraintValidator implements ConstraintValidator<MyConstraint, 
     public boolean isValid(Object value, ConstraintValidatorContext context) {
         Date date = new Date();
         if (date.hashCode() % 2 == 0) {
-            return false;
+            return true;
         }
-        return false;
+        return true;
     }
 }
