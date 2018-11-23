@@ -17,8 +17,8 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 @Constraint(validatedBy = MyConstraintValidator.class)
 public @interface MyConstraint {
-
-    String message();
+    //成员已无入参无抛出异常申明可以有默认值
+    String message() default "自定义注解";
 
     Class<?>[] groups() default {};
 

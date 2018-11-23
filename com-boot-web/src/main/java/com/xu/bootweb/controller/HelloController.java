@@ -97,8 +97,8 @@ public class HelloController {
      */
     @GetMapping("test7")
     public Object test7() {
-        //
-        //int i = 100 / 0;
+
+        int i = 100 / 0;
         throw new ZeRoException("ec");
         // return i;
     }
