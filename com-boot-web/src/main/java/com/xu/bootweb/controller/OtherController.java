@@ -21,7 +21,6 @@ public class OtherController {
 
     @GetMapping("/other")
     public Girl other() {
-        girl.setAge("18");
         return girl;
     }
 }
