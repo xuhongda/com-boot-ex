@@ -14,14 +14,14 @@ import java.util.Date;
  * com.xu.bootweb.filter
  * com-boot-ex
  */
-@WebFilter(urlPatterns = "/hello/test1")
+@WebFilter(filterName = "my_filter_1", urlPatterns = "/hello/test1")
 @Order(1)
 @Slf4j
 public class MyFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-
+        log.info("{}\tmy_filter_1\t被创建", new Date());
     }
 
 
