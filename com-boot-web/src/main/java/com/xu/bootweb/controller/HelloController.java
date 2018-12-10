@@ -8,6 +8,7 @@ import com.xu.bootweb.mapper.UserDao;
 import com.xu.bootweb.properties.MyProperties;
 import entity.Girl;
 import entity.UserEntity;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,6 +27,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("hello")
+@Slf4j
 public class HelloController {
 
     private final CityMapper cityMapper;
@@ -35,6 +37,9 @@ public class HelloController {
     private final MyProperties myProperties;
 
     private final UserDao userDao;
+
+    private final Girl girl;
+
     @Value("${com.xu.Girl.age}")
     private String param;
 
@@ -44,15 +49,18 @@ public class HelloController {
     }
 
     @Autowired
-    public HelloController(MyRepository myRepository, MyProperties myProperties, UserDao userDao, CityMapper cityMapper) {
+    public HelloController(MyRepository myRepository, MyProperties myProperties, UserDao userDao, CityMapper cityMapper, Girl girl) {
         this.myRepository = myRepository;
         this.myProperties = myProperties;
         this.userDao = userDao;
         this.cityMapper = cityMapper;
+        this.girl = girl;
     }
 
     @GetMapping("test1")
     public UserEntity test1() {
+        girl.setAge(girl.getAge() + 2);
+        log.info("{}", girl);
         return myRepository.get();
     }
 

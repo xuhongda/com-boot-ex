@@ -26,6 +26,6 @@ public class MyRepository {
 
     public Girl getGirl() {
         Date date = new Date();
-        return new Girl("18", "yan", "50", "123", date);
+        return new Girl(18, "yan", "50", "123", date);
     }
 }

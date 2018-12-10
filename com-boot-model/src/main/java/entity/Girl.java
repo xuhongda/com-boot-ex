@@ -32,7 +32,7 @@ public class Girl {
      * 自定义校验
      */
     @MyConstraint(message = "测试")
-    private String age;
+    private Integer age;
 
     @JsonView(GirlSimpleView.class)
     private String name;
