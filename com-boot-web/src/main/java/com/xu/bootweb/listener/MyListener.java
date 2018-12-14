@@ -17,14 +17,12 @@ public class MyListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         log.info("start");
-        System.out.println("start...");
     }
 
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-        System.out.println("end...");
+        log.info("end...");
     }
-
 
 }

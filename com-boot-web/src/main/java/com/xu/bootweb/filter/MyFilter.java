@@ -27,8 +27,7 @@ public class MyFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        System.out.println("一个拦截器。。。");
-
+        log.info("一个拦截器。。。");
         long l = System.currentTimeMillis();
         log.info("时间毫秒数{}", l);
         if (l % 2 == 0) {
@@ -40,8 +39,6 @@ public class MyFilter implements Filter {
             PrintWriter writer = response.getWriter();
             writer.print(l + "毫秒没有过拦截条件");
         }
-
-
     }
 
 
