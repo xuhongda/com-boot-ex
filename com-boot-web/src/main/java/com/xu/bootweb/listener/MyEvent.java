@@ -24,7 +24,7 @@ public class MyEvent extends ApplicationEvent implements Serializable {
         super(source);
     }
 
-    public void todoOne() {
+    void todoOne() {
         log.info("do something");
     }
 
