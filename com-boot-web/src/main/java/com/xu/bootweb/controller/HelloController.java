@@ -65,6 +65,13 @@ public class HelloController {
     }
 
 
+    @GetMapping("test2")
+    public void test2() {
+
+        throw new NullPointerException();
+    }
+
+
     @GetMapping("test3")
     public void test3() {
         throw new RuntimeException();
