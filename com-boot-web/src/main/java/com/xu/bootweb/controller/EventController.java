@@ -34,7 +34,7 @@ public class EventController implements ApplicationEventPublisherAware {
 
     /**
      * <p>
-     * 在一个请求中发布某个自定义事件,在这种情况下自定义Filter不会生效
+     * 在一个请求中发布某个自定义事件
      * </p>
      *
      * @return String
@@ -46,6 +46,5 @@ public class EventController implements ApplicationEventPublisherAware {
         eventPublisher.publishEvent(myEvent);
         return "已发布事件";
     }
-
 
 }
