@@ -29,7 +29,7 @@ public class OtherController {
     private MyEventPublisher myEventPublisher;
 
     @GetMapping("gl")
-    public Girl gl() {
+    public Girl gl(Girl girl) {
         log.info("读取spring-xml配置文件");
         return girl;
     }

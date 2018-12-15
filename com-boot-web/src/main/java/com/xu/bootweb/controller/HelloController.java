@@ -1,6 +1,7 @@
 package com.xu.bootweb.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xu.bootweb.MyRepository;
 import com.xu.bootweb.exception.ZeRoException;
 import com.xu.bootweb.mapper.CityMapper;
@@ -66,9 +67,8 @@ public class HelloController {
 
 
     @GetMapping("test2")
-    public void test2() {
-
-        throw new NullPointerException();
+    public void test2(Girl girl) {
+        throw new NullPointerException(girl.toString());
     }
 
 

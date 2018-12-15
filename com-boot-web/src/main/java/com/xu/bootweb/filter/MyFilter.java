@@ -8,13 +8,14 @@ import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
+import java.util.Enumeration;
 
 /**
  * @author xuhongda on 2018/11/29
  * com.xu.bootweb.filter
  * com-boot-ex
  */
-@WebFilter(filterName = "my_filter_1", urlPatterns = "/hello/test1")
+@WebFilter(filterName = "my_filter_1", urlPatterns = "/hello/*")
 @Order(1)
 @Slf4j
 public class MyFilter implements Filter {
@@ -27,6 +28,12 @@ public class MyFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        Enumeration<String> parameterNames = request.getParameterNames();
+        if (parameterNames.hasMoreElements()) {
+            String s = parameterNames.nextElement();
+            String parameter = request.getParameter(s);
+            log.info("请求参数：{}", parameter);
+        }
         log.info("一个拦截器。。。");
         long l = System.currentTimeMillis();
         log.info("时间毫秒数{}", l);
