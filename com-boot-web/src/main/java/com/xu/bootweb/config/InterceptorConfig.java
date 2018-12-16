@@ -16,8 +16,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebMvc
 public class InterceptorConfig implements WebMvcConfigurer {
 
+    private final MyInterceptor myInterceptor;
+
     @Autowired
-    private MyInterceptor myInterceptor;
+    public InterceptorConfig(MyInterceptor myInterceptor) {
+        this.myInterceptor = myInterceptor;
+    }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
