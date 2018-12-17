@@ -2,6 +2,7 @@ package com.xu.bootweb.listener;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.EventListener;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 /**
@@ -48,6 +49,7 @@ public class ListenerByAno {
      *
      * @param blEvent
      */
+    @Order(2)
     @EventListener(condition = "#blEvent.content == 'my-event'")
     public void process(BlackListEvent blEvent) {
         // notify appropriate parties via notificationAddress...
