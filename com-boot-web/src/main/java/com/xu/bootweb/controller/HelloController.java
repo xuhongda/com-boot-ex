@@ -1,7 +1,6 @@
 package com.xu.bootweb.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xu.bootweb.MyRepository;
 import com.xu.bootweb.exception.ZeRoException;
 import com.xu.bootweb.mapper.CityMapper;
@@ -15,11 +14,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
-import java.util.List;
 
 /**
  * @author xuhongda on 2018/8/1
@@ -130,7 +127,7 @@ public class HelloController {
 
     private void method() {
         cityMapper.deleteByPrimaryKey(103);
-        throw new RuntimeException("exception");
+        throw new RuntimeException("com.xu.bootweb.exception");
     }
 
 

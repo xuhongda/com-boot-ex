@@ -37,10 +37,10 @@
     </dependencyManagement>
 
     <modules>
-        <module>com-boot-util</module>
         <module>com-boot-web</module>
         <module>com-boot-model</module>
         <module>com-boot-persistence-annotation</module>
+        <module>com-boot-core</module>
     </modules>
 
     <developers>

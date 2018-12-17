@@ -23,7 +23,7 @@ public class DaoTest {
 
     @Test
     public void test() {
-        // userDao.getAll().parallelStream().filter(a->a.getId()>100).collect(Collectors.toList()).forEach(System.out::println);
+        // userDao.getAll().parallelStream().com.xu.bootweb.filter(a->a.getId()>100).collect(Collectors.toList()).forEach(System.out::println);
     }
 
 }

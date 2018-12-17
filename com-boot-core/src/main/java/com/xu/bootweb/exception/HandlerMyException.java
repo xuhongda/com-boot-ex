@@ -41,7 +41,7 @@ public class HandlerMyException {
         Map<String, Object> result = new HashMap<>(3);
         result.put("id", ex.getId());
         result.put("message", ex.getMessage());
-        result.put("exception", ex.getStackTrace());
+        result.put("com/xu/bootweb/exception", ex.getStackTrace());
         logger.error(ex);
         return result;
     }
