@@ -88,6 +88,7 @@ public class HelloController {
 
     @GetMapping("test5")
     public Girl test5(@Valid Girl girl) {
+        log.info("girl={}", girl);
         return myRepository.getGirl();
     }
 
@@ -98,8 +99,7 @@ public class HelloController {
      */
     @GetMapping("test6")
     public Object test6() {
-        Girl girl = myProperties.getGirl();
-        return girl;
+        return myProperties.getGirl();
     }
 
     /**
@@ -110,7 +110,7 @@ public class HelloController {
     @GetMapping("test7")
     public Object test7() {
 
-        int i = 100 / 0;
+        // int i = 100 / 0;
         throw new ZeRoException("ec");
         // return i;
     }
