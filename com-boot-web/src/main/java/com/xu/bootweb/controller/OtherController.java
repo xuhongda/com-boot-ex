@@ -1,13 +1,21 @@
 package com.xu.bootweb.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xu.bootweb.listener.MyEvent;
 import com.xu.bootweb.listener.MyEventPublisher;
 import entity.Girl;
+import entity.Result;
+import entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.io.IOException;
+import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>
@@ -22,11 +30,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("other")
 public class OtherController {
 
-    @Autowired
-    private Girl girl;
+    private ObjectMapper mapper = new ObjectMapper();
+
+    private StringWriter writer = new StringWriter();
+
+    private final Girl girl;
+
+    private final MyEventPublisher myEventPublisher;
 
     @Autowired
-    private MyEventPublisher myEventPublisher;
+    public OtherController(Girl girl, MyEventPublisher myEventPublisher) {
+        this.girl = girl;
+        this.myEventPublisher = myEventPublisher;
+    }
 
     @GetMapping("gl")
     public Girl gl(Girl girl) {
@@ -55,6 +71,24 @@ public class OtherController {
         MyEvent event = new MyEvent(this);
         myEventPublisher.publish(event);
         return "已发布事件";
+    }
+
+    @GetMapping("json")
+    public Result<User> testJson() throws IOException {
+        User user = new User();
+        Girl g = new Girl();
+        g.setAge(18);
+        g.setPassword("123");
+        Girl g2 = new Girl();
+        g2.setAge(18);
+        g2.setPassword("123");
+        List<Girl> girls = new ArrayList<>();
+        girls.add(g);
+        girls.add(g2);
+        user.setGirls(girls);
+        Result<User> result = new Result<>();
+        result.setData(user);
+        return result;
     }
 
 }
