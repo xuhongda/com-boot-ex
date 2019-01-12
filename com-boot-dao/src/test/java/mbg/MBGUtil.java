@@ -10,10 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- <<<<<<< Updated upstream
  * myBatis的逆向工程
- =======
- >>>>>>> Stashed changes
  *
  * @author xuhongda on 2017/10/21
  * com.xu.scw.util
