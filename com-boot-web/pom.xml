@@ -18,6 +18,16 @@
     <dependencies>
         <dependency>
             <groupId>com.xu</groupId>
+            <artifactId>com-boot-dao</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.xu</groupId>
+            <artifactId>com-boot-service</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.xu</groupId>
             <artifactId>com-boot-core</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

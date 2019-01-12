@@ -39,8 +39,9 @@
     <modules>
         <module>com-boot-web</module>
         <module>com-boot-model</module>
-        <module>com-boot-persistence-annotation</module>
+        <module>com-boot-dao</module>
         <module>com-boot-core</module>
+        <module>com-boot-service</module>
     </modules>
 
     <developers>
