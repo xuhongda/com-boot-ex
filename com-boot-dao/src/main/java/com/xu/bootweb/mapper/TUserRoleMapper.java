@@ -2,7 +2,9 @@ package com.xu.bootweb.mapper;
 
 import com.xu.bootweb.pojo.TUserRole;
 import com.xu.bootweb.pojo.TUserRoleExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface TUserRoleMapper {

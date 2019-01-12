@@ -21,29 +21,29 @@
                         password="7777">
         </jdbcConnection>
 
-        <javaTypeResolver >
-            <property name="forceBigDecimals" value="false" />
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
         <!-- javaModelGenerator:指定javaBean生成的地方 -->
         <javaModelGenerator
                 targetPackage="com.xu.bootweb.pojo"
                 targetProject="E:\code\git\com-boot-ex\com-boot-dao\src\main\java">
-            <property name="enableSubPackages" value="true" />
-            <property name="trimStrings" value="true" />
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!--sqlMapGenerator：指定生成xml的地方  -->
         <sqlMapGenerator targetPackage="mybatis.mapper"
                          targetProject="E:\code\git\com-boot-ex\com-boot-dao\src\main\resources">
-            <property name="enableSubPackages" value="true" />
+            <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
         <!-- javaClientGenerator:指定dao接口生成的地方 -->
         <javaClientGenerator type="XMLMAPPER"
                              targetPackage="com.xu.bootweb.mapper"
                              targetProject="E:\code\git\com-boot-ex\com-boot-dao\src\main\java">
-            <property name="enableSubPackages" value="true" />
+            <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
         <!-- 指定需要逆向的表格:
@@ -55,9 +55,9 @@
         <table tableName="t_user_role"/>
         <table tableName="t_type"/>
         <table tableName="t_token"/>
-       <!-- <table tableName="scw_name"></table>-->
-       <!-- <table tableName="t_test"></table>
-        <table tableName="t_token"></table>-->
+        <!-- <table tableName="scw_name"></table>-->
+        <!-- <table tableName="t_test"></table>
+         <table tableName="t_token"></table>-->
 
         <!--<table tableName="t_account_type_cert"></table>
         <table tableName="t_advertisement"></table>

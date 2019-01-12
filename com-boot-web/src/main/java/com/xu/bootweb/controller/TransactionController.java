@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Date;
 
 /**
- *
  * @author xuhongda on 2019/1/12
  * com.xu.bootweb.controller
  * com-boot-ex
@@ -36,7 +35,7 @@ public class TransactionController {
      */
     @Transactional(rollbackFor = Exception.class)
     @GetMapping("t1")
-    public void t1(){
+    public void t1() {
         TUser tUser = new TUser();
         tUser.setUsername("xcv");
         tUser.setLoginacct(new Date().toString());

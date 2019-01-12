@@ -2,7 +2,9 @@ package com.xu.bootweb.mapper;
 
 import com.xu.bootweb.pojo.TToken;
 import com.xu.bootweb.pojo.TTokenExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface TTokenMapper {

@@ -2,7 +2,9 @@ package com.xu.bootweb.mapper;
 
 import com.xu.bootweb.pojo.TUser;
 import com.xu.bootweb.pojo.TUserExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface TUserMapper {

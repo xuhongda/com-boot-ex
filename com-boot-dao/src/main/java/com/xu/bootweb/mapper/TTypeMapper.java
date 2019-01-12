@@ -2,7 +2,9 @@ package com.xu.bootweb.mapper;
 
 import com.xu.bootweb.pojo.TType;
 import com.xu.bootweb.pojo.TTypeExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface TTypeMapper {
