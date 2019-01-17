@@ -1,5 +1,6 @@
 package com.xu.bootweb.controller;
 
+import com.xu.bootweb.exception.ZeRoException;
 import com.xu.bootweb.mapper.TTokenMapper;
 import com.xu.bootweb.mapper.TUserMapper;
 import com.xu.bootweb.pojo.TToken;
@@ -47,10 +48,10 @@ public class TransactionController {
 
     private void m1() {
         TToken tToken = new TToken();
-        tToken.setToken("xxxxxxxxx");
+        tToken.setToken("str");
         tToken.setUid(11111);
         tToken.setCreatetime(new Date());
         tTokenMapper.insertSelective(tToken);
-        throw new RuntimeException();
+        throw new ZeRoException("ex");
     }
 }
