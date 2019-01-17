@@ -31,7 +31,7 @@ public class HandlerMyException {
      * {ExceptionHandler(ZeRoException.class) 指明处理哪个异常}
      * </p>
      *
-     * @param ex
+     * @param ex 处理异常类型
      * @return Map
      */
     @ExceptionHandler(ZeRoException.class)
