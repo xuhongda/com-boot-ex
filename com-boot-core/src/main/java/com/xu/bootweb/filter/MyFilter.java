@@ -37,7 +37,7 @@ public class MyFilter implements Filter {
         log.info("一个拦截器。。。");
         long l = System.currentTimeMillis();
         log.info("时间毫秒数{}", l);
-        if (l % 2 == 0) {
+        if (true) {
             //放行
             chain.doFilter(request, response);
         } else {
