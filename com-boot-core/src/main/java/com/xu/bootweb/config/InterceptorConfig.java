@@ -8,6 +8,9 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
+ * <P>
+ *     配置 Interceptor 拦截 内容
+ * </P>
  * @author xuhongda on 2018/12/15
  * com.xu.bootweb.config
  * com-boot-ex
