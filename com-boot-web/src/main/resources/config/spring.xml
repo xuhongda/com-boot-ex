@@ -9,5 +9,11 @@
         <property name="password" value="123456"/>
     </bean>
 
+
+    <bean id="peoPle" class="entity.PeoPle">
+        <property name="age" value="17"/>
+        <property name="name" value="xu"/>
+    </bean>
+
 </beans>
 

@@ -4,10 +4,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xu.bootweb.listener.MyEvent;
 import com.xu.bootweb.listener.MyEventPublisher;
 import entity.Girl;
+import entity.PeoPle;
 import entity.Result;
 import entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,12 +38,14 @@ public class OtherController {
     private StringWriter writer = new StringWriter();
 
     private final Girl girl;
+    private final PeoPle peoPle;
 
     private final MyEventPublisher myEventPublisher;
 
     @Autowired
-    public OtherController(Girl girl, MyEventPublisher myEventPublisher) {
+    public OtherController(Girl girl, MyEventPublisher myEventPublisher,PeoPle peoPle) {
         this.girl = girl;
+        this.peoPle = peoPle;
         this.myEventPublisher = myEventPublisher;
     }
 
@@ -90,5 +95,13 @@ public class OtherController {
         result.setData(user);
         return result;
     }
+
+    @GetMapping("p")
+    public PeoPle getPeople(){
+        return peoPle;
+    }
+
+
+
 
 }
