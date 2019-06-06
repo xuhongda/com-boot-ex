@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -35,7 +36,8 @@ public class MyInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
-        List<City> cities = cityMapper.selectByExample(null);
+       // List<City> cities = cityMapper.selectByEKLxample(null);
+        List<City> cities = Arrays.asList(new City(),new City());
         log.info("size = {}", cities.size());
         log.info("{}", request.getQueryString());
         String requestURI = request.getRequestURI();
