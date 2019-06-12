@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class SocketController {
     @GetMapping("socket")
     public String soc(){
-        return "page/socket";
+        return "socket";
     }
 }

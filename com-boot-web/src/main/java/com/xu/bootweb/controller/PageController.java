@@ -17,25 +17,32 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("page")
 public class PageController {
 
-    private static String page = "page/hello";
+
+
+    @GetMapping("test")
+    public String test(HttpServletRequest request) {
+        request.getSession().setAttribute("name","xuhongda");
+        return "test";
+    }
+
 
     @GetMapping("ht")
     public String ht(HttpServletRequest request) {
         request.setAttribute("hello", "hello");
-        return page;
+        return "hello";
     }
 
 
     @GetMapping("md")
     public String ht(Model model) {
         model.addAttribute("hello", "hello");
-        return page;
+        return "hello";
     }
 
 
     @GetMapping("mv")
     public ModelAndView mv(String str) {
-        ModelAndView mv = new ModelAndView(page);
+        ModelAndView mv = new ModelAndView("hello");
         mv.addObject("hello", str);
         return mv;
     }
