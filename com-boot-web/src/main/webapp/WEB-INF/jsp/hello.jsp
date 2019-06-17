@@ -6,7 +6,7 @@
 </head>
 <script src="/static/jquery-3.2.1.js" type="text/javascript"></script>
 <body>
-<span th:text="${#request.getAttribute('hello')}"></span>
+<span th:text="${request.getAttribute('hello')}"></span>
 <h1>world !!!</h1>
 <script>
     alert("are you ok !!!!")
