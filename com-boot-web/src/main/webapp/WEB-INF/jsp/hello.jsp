@@ -9,7 +9,19 @@
 <span th:text="${request.getAttribute('hello')}"></span>
 <h1>world !!!</h1>
 <script>
-    alert("are you ok !!!!")
+
+    var flag = "${requestScope.get("flag")}";
+    console.log("flag=="+flag);
+    {
+        var v = "xu";
+        console.log(typeof (v));
+        var v2;
+        console.log(v2); // undefined
+        var nan = 10/0;
+        console.log("nan ="+nan);
+        console.log("nan ="+isNaN(nan));
+    }
+
 </script>
 
 </body>

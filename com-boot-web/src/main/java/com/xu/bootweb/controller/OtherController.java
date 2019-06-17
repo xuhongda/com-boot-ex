@@ -62,7 +62,9 @@ public class OtherController {
      */
     @GetMapping("sg")
     public Girl sg() {
+        log.info("pre age === {}",girl.getAge() );
         girl.setAge(girl.getAge() + 1);
+        log.info("after age === {}",girl.getAge() );
         return girl;
     }
 

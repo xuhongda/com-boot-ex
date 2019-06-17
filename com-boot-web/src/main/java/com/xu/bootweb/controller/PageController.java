@@ -36,6 +36,7 @@ public class PageController {
     @GetMapping("md")
     public String ht(Model model) {
         model.addAttribute("hello", "hello");
+        model.addAttribute("flag", true);
         return "hello";
     }
 
