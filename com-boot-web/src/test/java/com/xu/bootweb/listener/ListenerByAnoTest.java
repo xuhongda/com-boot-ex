@@ -21,7 +21,7 @@ import static org.junit.Assert.*;
 public class ListenerByAnoTest {
 
     @Autowired
-    private MyEventPublisher<BlackListEvent> publisher;
+    private MyEventPublisher publisher;
 
     @Autowired
     private EmailService emailService;
