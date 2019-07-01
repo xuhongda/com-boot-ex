@@ -17,13 +17,12 @@ import javax.validation.Valid;
 public class RestfulController {
     /**
      * 路径正则表达式匹配
-     *
-     * @param id
-     * @return
+     * regx: \d 匹配数字
+     * @return String
      */
     @GetMapping("/rest/{id:\\d+}")
-    public String regex(@PathVariable("id") String id) {
-        return "regex" + id;
+    public String regex(@PathVariable("id") String num) {
+        return "regex-->" + num;
     }
 
     /**
