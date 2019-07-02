@@ -30,7 +30,7 @@ public class RestfulController {
      * 加上 @Valid 后，将按照 {@link Girl} 定义的规则校验
      * </P>
      *
-     * @param girl
+     * @param girl girl
      * @return Girl
      */
     @GetMapping("getGirl")
