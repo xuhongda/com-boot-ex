@@ -1,6 +1,7 @@
 package com.xu.bootweb.config;
 
 import com.xu.bootweb.interceptor.MyInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.*;
 
@@ -18,10 +19,14 @@ import org.springframework.web.servlet.config.annotation.*;
 public class WebMvcConfig implements WebMvcConfigurer {
 
 
+    @Autowired
+    private MyInterceptor myInterceptor;
+
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
 
-        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/hello/**")
+        registry.addInterceptor(myInterceptor).addPathPatterns("/hello/**")
                 .excludePathPatterns("/admin/**");
 
     }
