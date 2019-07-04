@@ -32,7 +32,7 @@ public class WebSocket {
     /**
      * 若要实现服务端与指定客户端通信的话，可以使用Map来存放，其中Key可以为用户标识
      */
-    private static ConcurrentHashMap<Session, Object> webSocketMap = new ConcurrentHashMap<Session, Object>();
+    private static ConcurrentHashMap<Session, Object> webSocketMap = new ConcurrentHashMap<>();
 
     /**
      * 与某个客户端的连接会话，通过它实现定向推送(只推送给某个用户)
