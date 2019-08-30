@@ -25,11 +25,11 @@ public class MyEvent extends ApplicationEvent implements Serializable {
     }
 
     void todoOne() {
-        log.info("do something");
+        log.info("do something one... ");
     }
 
     void todoTwo() {
-        log.info("do something");
+        log.info("do something two ...");
     }
 
 }
