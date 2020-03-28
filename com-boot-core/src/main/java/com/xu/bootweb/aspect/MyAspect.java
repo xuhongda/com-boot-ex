@@ -22,8 +22,9 @@ public class MyAspect {
      * 第二个 * ： 类中任何方法
      * ..      :  任何请求参数
      * </P>
+     * 切点
      */
-    @Around("execution(* com.xu.bootweb.controller.OtherController.*(..))") //切点
+    @Around("execution(* com.xu.bootweb.controller.OtherController.*(..))")
     public Object around(ProceedingJoinPoint pjp) throws Throwable { //增强
 
         //参数对象个数
