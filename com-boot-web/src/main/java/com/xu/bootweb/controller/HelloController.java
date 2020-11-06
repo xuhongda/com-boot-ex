@@ -11,6 +11,7 @@ import entity.UserEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,8 +42,12 @@ public class HelloController {
     @Value("${com.xu.Girl.age}")
     private String param;
 
+    @Autowired
+    private Environment env;
+
     @GetMapping("hello")
     public String hello(String s) {
+        String property = env.getProperty("com.xu.Girl.age");
         return param;
     }
 
