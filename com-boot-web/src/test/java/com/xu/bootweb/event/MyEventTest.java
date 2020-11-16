@@ -2,6 +2,7 @@ package com.xu.bootweb.event;
 
 import com.xu.bootweb.listener.MyEvent;
 import com.xu.bootweb.listener.MyEventPublisher;
+import com.xu.bootweb.listener.MyEventPublisher2;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +20,14 @@ public class MyEventTest {
     @Autowired
     private MyEventPublisher publisher;
 
+    @Autowired
+    private MyEventPublisher2 publisher2;
+
     @Test
     public void test() {
         MyEvent event = new MyEvent(this);
         publisher.publish(event);
+
+        publisher2.pub(event);
     }
 }
