@@ -48,6 +48,7 @@ public class HelloController {
     @GetMapping("hello")
     public String hello(String s) {
         String property = env.getProperty("com.xu.Girl.age");
+        log.info("property = {}",property);
         return param;
     }
 
@@ -134,6 +135,7 @@ public class HelloController {
         cityMapper.deleteByPrimaryKey(103);
         throw new RuntimeException("com.xu.bootweb.exception");
     }
+
 
 
 

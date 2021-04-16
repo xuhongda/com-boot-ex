@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+
 /**
  * @author xuhongda
  */
