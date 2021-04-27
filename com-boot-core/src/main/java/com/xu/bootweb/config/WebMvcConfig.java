@@ -2,13 +2,18 @@ package com.xu.bootweb.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xu.bootweb.interceptor.MyInterceptor;
+import com.xu.bootweb.resolvers.MyArgumentResolver;
+import com.xu.bootweb.resolvers.MyViewResolver;
+import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.*;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import java.nio.charset.Charset;
 import java.util.List;
@@ -30,13 +35,52 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Autowired
     private MyInterceptor myInterceptor;
 
+    @Autowired
+    private MyViewResolver myViewResolver;
+
+    @Autowired
+    private MyArgumentResolver myArgumentResolver;
+
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
 
-        registry.addInterceptor(myInterceptor).addPathPatterns("/hello/**")
+        registry.addInterceptor(myInterceptor).addPathPatterns("/*")
                 .excludePathPatterns("/admin/**");
 
+    }
+
+
+    @Override
+    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
+
+        resolvers.add(myArgumentResolver);
+    }
+
+
+    /**
+     * 配置请求视图映射
+     */
+    @Bean
+    public InternalResourceViewResolver resourceViewResolver()
+    {
+        InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
+        //请求视图文件的前缀地址
+        internalResourceViewResolver.setPrefix("/WEB-INF/jsp/");
+        //请求视图文件的后缀
+        internalResourceViewResolver.setSuffix(".jsp");
+        return internalResourceViewResolver;
+    }
+
+    /**
+     * 关键-视图解析器配置
+     */
+    @Override
+    public void configureViewResolvers(ViewResolverRegistry registry) {
+
+        registry.viewResolver(resourceViewResolver());
+        // 添加自己的视图解析器
+        registry.viewResolver(myViewResolver);
     }
 
     /**
@@ -94,5 +138,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
             ContentNegotiationConfigurer configurer) {
         configurer.favorPathExtension(false);
     }
+
+
+
 
 }

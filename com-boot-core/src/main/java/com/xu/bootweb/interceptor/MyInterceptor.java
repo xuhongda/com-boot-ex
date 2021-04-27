@@ -44,6 +44,7 @@ public class MyInterceptor implements HandlerInterceptor {
         log.info("uri = {}", requestURI);
         log.info("preHandle");
         log.info("handler = {}", handler);
+        request.setAttribute("name","liu");
         // return false; //false 将不会往后执行
         return true;
     }
