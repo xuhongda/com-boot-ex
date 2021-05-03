@@ -1,7 +1,9 @@
 package com.xu.bootweb.controller;
 
+import com.xu.bootweb.anotation.LoginUser;
 import entity.Account;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,5 +26,14 @@ public class LoginController {
 
         log.info(" register acc = {}",account.toString());
         response.getWriter().println("OK");
+    }
+
+
+    @GetMapping("/login")
+    @LoginUser
+    public Account login(Account account){
+
+        log.info("  account = {}",account);
+        return account;
     }
 }

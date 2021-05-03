@@ -1,5 +1,6 @@
 package com.xu.bootweb.resolvers;
 
+import entity.Account;
 import entity.Girl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.MethodParameter;
@@ -30,27 +31,12 @@ public class MyArgumentResolver implements HandlerMethodArgumentResolver {
      */
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
-
-        boolean assignableFrom = parameter.getParameterType().isAssignableFrom(Girl.class);
+        Class<?> parameterType = parameter.getParameterType();
+        boolean assignableFrom =parameterType.isAssignableFrom(Girl.class)|| parameterType.isAssignableFrom(Account.class);
         return assignableFrom;
     }
 
-    /**
-     * Resolves a method parameter into an argument value from a given request.
-     * A {@link ModelAndViewContainer} provides access to the model for the
-     * request. A {@link WebDataBinderFactory} provides a way to create
-     * a {@link WebDataBinder} instance when needed for data binding and
-     * type conversion purposes.
-     *
-     * @param parameter     the method parameter to resolve. This parameter must
-     *                      have previously been passed to {@link #supportsParameter} which must
-     *                      have returned {@code true}.
-     * @param mavContainer  the ModelAndViewContainer for the current request
-     * @param webRequest    the current request
-     * @param binderFactory a factory for creating {@link WebDataBinder} instances
-     * @return the resolved argument value, or {@code null} if not resolvable
-     * @throws Exception in case of errors with the preparation of argument values
-     */
+
     @Override
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
 
