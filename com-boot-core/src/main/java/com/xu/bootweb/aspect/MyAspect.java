@@ -14,6 +14,8 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.mvc.condition.RequestConditionHolder;
 
 import javax.servlet.http.HttpServletRequest;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Enumeration;
 
 /**
@@ -27,6 +29,8 @@ import java.util.Enumeration;
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 public class MyAspect {
 
+    public static final ThreadLocal<SimpleDateFormat> dateFormat = ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"));
+
 
     /**
      * <p>
@@ -39,6 +43,10 @@ public class MyAspect {
     @Around("execution(* com.xu.bootweb.controller.OtherController.*(..))")
     public Object around(ProceedingJoinPoint pjp) throws Throwable { //增强
 
+
+        SimpleDateFormat simpleDateFormat = dateFormat.get();
+        String format = simpleDateFormat.format(new Date());
+        log.info("date = {}",format);
         //参数对象个数
         Object[] args = pjp.getArgs();
         for (Object o : args) {
@@ -57,8 +65,8 @@ public class MyAspect {
     }
 
     /**
-     *  执行顺序在参数解析后
-     *  利用aop 做访问控制
+     * 执行顺序在参数解析后
+     * 利用aop 做访问控制
      */
 
     @Around(value = "@annotation(com.xu.bootweb.anotation.LoginUser)")
