@@ -9,9 +9,13 @@
     </bean>
 
 
-    <bean id="peoPle" class="entity.PeoPle">
+    <bean id="people" class="entity.People">
         <property name="age" value="17"/>
         <property name="name" value="xu"/>
+    </bean>
+
+    <bean id="car" class="entity.Car">
+        <property name="color" value="red"/>
     </bean>
 
 

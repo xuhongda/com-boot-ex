@@ -21,11 +21,11 @@ public class MyEventListener implements ApplicationListener<MyEvent> {
      */
     @Override
     public void onApplicationEvent(MyEvent event) {
-        log.info("MyEventListener 监听到事件:{}", event.getClass().getName());
+        log.info(" start MyEventListener 监听到事件:{}", event.getClass().getName());
         // 处理事件:开始...
         log.info("处理事件开始...");
         event.todoOne();
         event.todoTwo();
-        log.info("处理事件结束...");
+        log.info(" end 处理事件结束...");
     }
 }

@@ -29,7 +29,7 @@ import java.util.Enumeration;
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 public class MyAspect {
 
-    public static final ThreadLocal<SimpleDateFormat> dateFormat = ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"));
+    private static final ThreadLocal<SimpleDateFormat> dateFormat = ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"));
 
 
     /**

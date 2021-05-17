@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xu.bootweb.listener.MyEvent;
 import com.xu.bootweb.listener.MyEventPublisher;
 import entity.Girl;
-import entity.PeoPle;
+import entity.People;
 import entity.Result;
 import entity.User;
 import lombok.extern.slf4j.Slf4j;
@@ -36,12 +36,12 @@ public class OtherController {
     private StringWriter writer = new StringWriter();
 
     private final Girl girl;
-    private final PeoPle peoPle;
+    private final People peoPle;
 
     private final MyEventPublisher myEventPublisher;
 
     @Autowired
-    public OtherController(Girl girl, MyEventPublisher myEventPublisher,PeoPle peoPle) {
+    public OtherController(Girl girl, MyEventPublisher myEventPublisher, People peoPle) {
         this.girl = girl;
         this.peoPle = peoPle;
         this.myEventPublisher = myEventPublisher;
@@ -97,7 +97,7 @@ public class OtherController {
     }
 
     @GetMapping("p")
-    public PeoPle getPeople(){
+    public People getPeople(){
         return peoPle;
     }
 

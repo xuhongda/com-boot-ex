@@ -14,7 +14,7 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class PeoPle {
+public class People {
     private Integer age;
     private String name;
 }
