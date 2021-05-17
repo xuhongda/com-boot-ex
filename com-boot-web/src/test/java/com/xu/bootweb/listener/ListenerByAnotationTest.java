@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class ListenerByAnoTest {
+public class ListenerByAnotationTest {
 
     @Autowired
     private MyEventPublisher publisher;

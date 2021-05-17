@@ -45,4 +45,7 @@ public class Girl {
 
     @Past(message = "生日必须是过去的时间")
     private Date birthday;
+
+
+    private boolean inMyHeart = false;
 }

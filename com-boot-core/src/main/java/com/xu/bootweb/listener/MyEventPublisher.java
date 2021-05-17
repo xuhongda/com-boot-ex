@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
  * @author xuhongda on 2018/12/14
  * com.xu.bootweb.listener
  * com-boot-ex
+ *
+ * 一般由容器发布事件
  */
 @Component
 @Slf4j

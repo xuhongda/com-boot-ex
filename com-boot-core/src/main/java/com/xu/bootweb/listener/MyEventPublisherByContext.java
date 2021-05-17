@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  * 用 ApplicationContext publishEvent 方法发布事件
  */
 @Component
-public class MyEventPublisher2 {
+public class MyEventPublisherByContext {
 
     @Autowired
     private ApplicationContext applicationContext;

@@ -15,6 +15,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
@@ -87,7 +88,7 @@ public class HelloController {
      */
     @JsonView(Girl.GirlSimpleView.class)
     @GetMapping("test4")
-    public Girl test4() {
+    public Girl test4(@RequestParam String name) {
         return myRepository.getGirl();
     }
 

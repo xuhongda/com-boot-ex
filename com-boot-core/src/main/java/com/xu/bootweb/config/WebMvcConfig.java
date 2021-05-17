@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xu.bootweb.interceptor.MyInterceptor;
 import com.xu.bootweb.resolvers.MyArgumentResolver;
 import com.xu.bootweb.resolvers.MyViewResolver;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

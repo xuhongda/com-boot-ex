@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
  */
 @Slf4j
 @Component
-public class ListenerByAno {
+public class ListenerByAnotation {
 
 
     @EventListener
@@ -46,8 +46,6 @@ public class ListenerByAno {
 
     /**
      * El 表达式条件
-     *
-     * @param blEvent
      */
     @Order(2)
     @EventListener(condition = "#blEvent.content == 'my-event'")

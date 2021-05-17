@@ -1,5 +1,6 @@
 package com.xu.bootweb.controller;
 
+import com.xu.bootweb.annotation.InMyHeart;
 import entity.Girl;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ArgumentResolversTestController {
 
     @RequestMapping("arg")
-    public Girl vv(Girl girl){
+    public Girl vv(@InMyHeart Girl girl){
         return girl;
     }
 }
