@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class MyEventListener implements ApplicationListener<MyEvent> {
     /**
      * Handle an application event.
-     *
+     * 监听到事件发布，决定做什么
      * @param event the event to respond to
      */
     @Override
