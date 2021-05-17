@@ -29,9 +29,8 @@ public class MyArgumentResolver implements HandlerMethodArgumentResolver {
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
 
-        boolean annotationPresent = parameter.hasParameterAnnotation(InMyHeart.class);
         boolean assignableFrom = parameter.getParameterType().isAssignableFrom(Girl.class);
-        return annotationPresent&&assignableFrom;
+        return assignableFrom;
     }
 
     @Override
