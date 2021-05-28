@@ -69,7 +69,7 @@ public class MyAspect {
      * 利用aop 做访问控制
      */
 
-    @Around(value = "@annotation(com.xu.bootweb.anotation.LoginUser)")
+    @Around(value = "@annotation(com.xu.bootweb.annotation.LoginUser)")
     public Object login(ProceedingJoinPoint pjp) throws Throwable { //增强
 
         RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();

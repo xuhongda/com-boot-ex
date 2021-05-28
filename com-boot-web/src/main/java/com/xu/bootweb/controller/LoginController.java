@@ -1,6 +1,6 @@
 package com.xu.bootweb.controller;
 
-import com.xu.bootweb.anotation.LoginUser;
+import com.xu.bootweb.annotation.LoginUser;
 import entity.Account;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
