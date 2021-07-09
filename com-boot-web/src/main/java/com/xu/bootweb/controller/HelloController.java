@@ -53,6 +53,47 @@ public class HelloController {
         return param;
     }
 
+    @GetMapping("items")
+    public String items(String s) throws InterruptedException {
+        Thread.sleep(10000);
+        String str = "{\n" +
+                "  \"items\":[\n" +
+                "  {\n" +
+                "    \"icon\": \"el-icon-lx-home\",\n" +
+                "    \"index\": \"dashboard\",\n" +
+                "    \"title\": \"系统首页\"\n" +
+                "  },\n" +
+                "\n" +
+                "  {\n" +
+                "    \"icon\": \"el-icon-goods\",\n" +
+                "    \"index\": \"#\",\n" +
+                "    \"title\": \"购物中心\",\n" +
+                "    \"subs\": [\n" +
+                "      {\n" +
+                "        \"index\": \"oms\",\n" +
+                "        \"title\": \"商场首页\"\n" +
+                "      },\n" +
+                "      {\n" +
+                "        \"index\": \"#1\",\n" +
+                "        \"title\": \"商品列表\",\n" +
+                "        \"subs\": [\n" +
+                "          {\n" +
+                "            \"index\": \"car\",\n" +
+                "            \"title\": \"汽车\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"index\": \"phone\",\n" +
+                "            \"title\": \"手机\"\n" +
+                "          }\n" +
+                "        ]\n" +
+                "      }\n" +
+                "    ]\n" +
+                "  }\n" +
+                "]\n" +
+                "}\n";
+        return str;
+    }
+
     @Autowired
     public HelloController(MyRepository myRepository, MyProperties myProperties, UserDao userDao, CityMapper cityMapper, Girl girl) {
         this.myRepository = myRepository;
