@@ -3,10 +3,7 @@ package com.xu.bootweb.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xu.bootweb.listener.MyEvent;
 import com.xu.bootweb.listener.MyEventPublisher;
-import entity.Girl;
-import entity.People;
-import entity.Result;
-import entity.User;
+import entity.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,6 +42,16 @@ public class OtherController {
         this.girl = girl;
         this.peoPle = peoPle;
         this.myEventPublisher = myEventPublisher;
+    }
+
+    @GetMapping("items")
+    public Items items() {
+        Items items = new Items();
+        items.setIcon("x");
+        items.setTitle("a");
+        items.setIndex("1-1");
+
+        return items;
     }
 
     @GetMapping("gl")

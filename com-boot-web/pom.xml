@@ -5,7 +5,7 @@
 
 
     <artifactId>com-boot-web</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <name>com-boot-web</name>
     <description>Demo project for Spring Boot</description>
@@ -17,11 +17,11 @@
     </parent>
 
     <dependencies>
-        <dependency>
+        <!--<dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
         </dependency>
-        <!-- Provided -->
+        &lt;!&ndash; Provided &ndash;&gt;
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
@@ -31,7 +31,7 @@
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
             <scope>provided</scope>
-        </dependency>
+        </dependency>-->
 
 
         <dependency>
