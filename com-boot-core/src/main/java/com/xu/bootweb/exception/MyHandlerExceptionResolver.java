@@ -38,7 +38,7 @@ public class MyHandlerExceptionResolver implements HandlerExceptionResolver  {
 
     private ModelAndView handlerException(HttpServletResponse response, Object handler, Exception ex) throws IOException {
         response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, ex.getMessage());
-        log.info("ex = ",ex);
+        log.warn("ex = ",ex);
         return new ModelAndView();
     }
 }
