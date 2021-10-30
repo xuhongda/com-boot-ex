@@ -9,6 +9,7 @@ import validator.MyConstraint;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.PastOrPresent;
 import java.util.Date;
 
 /**
@@ -43,7 +44,7 @@ public class Girl {
     @NotBlank(message = "密码不能为空")
     private String password;
 
-    @Past(message = "生日必须是过去的时间")
+    @PastOrPresent(message = "生日必须是过去或者现在")
     private Date birthday;
 
 

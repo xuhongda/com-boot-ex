@@ -15,6 +15,7 @@ import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 /**
@@ -105,7 +106,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Bean
     public HttpMessageConverter<String> responseBodyConverter() {
         StringHttpMessageConverter converter = new StringHttpMessageConverter(
-                Charset.forName("UTF-8"));
+                StandardCharsets.UTF_8);
         converter.setWriteAcceptCharset(false);
         return converter;
     }

@@ -55,7 +55,7 @@ public class HelloController {
 
     @GetMapping("items")
     public String items(String s) throws InterruptedException {
-        Thread.sleep(10000);
+        //Thread.sleep(1000);
         String str = "{\n" +
                 "  \"items\":[\n" +
                 "  {\n" +
